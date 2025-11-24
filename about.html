@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Touch to Start - About</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script_about.js" defer></script>
+</head>
+<body>
+  <header>
+    <button class="header-button" popovertarget="site-navigation" popovertargetaction="show"><img class="hamburger-menu" src="Immagini/Icone/Immagini varie/burger-bar.png"></button>
+    <nav id="site-navigation" class="header-nav" popover>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="#">Nintendo DS</a>
+        </li>
+        <li>
+          <a href="wii.html">Wii</a>
+        </li>
+        <li>
+          <a href="#">Switch</a>
+        </li>
+        <li>
+          <a href="about.html">About</a>
+        </li>
+      </ul>
+      <button popovertarget="site-navigation" popovertargetaction="hide">Chiudi menu</button>
+    </nav>
+    <div class="logo"> 
+      <a href="index.html">
+        <img src="Immagini/Logo/Logo red.png" alt="Logo">
+      </a>
+    </div>
+  </header>
+
+      <section class="section-chi_sono">
+            <div>
+                <img src="Immagini\Icone\Immagini varie\Mii (Tommaso).png" alt="Ritratto di Tommaso" class="Tommaso-img"> 
+                <h2><b>Chi Sono</b></h2>
+                <p>Mi chiamo Tommaso, classe 2001. Una delle passioni che ho da quando ero bambino sono i videogiochi, in particolare quelli del mondo Nintendo. 
+                  Il mio primo vero contatto con questo mondo è stato un Nintendo DSI XL colore bordeaux, grande, luminoso e comodo. Era sempre con me. Mi divertivo, in viaggio, sotto le coperte. 
+                  Passavo ore a saltare su Super Mario Bros, a sfidare amici su Mario Kart o a vivere giornate tranquille tra lettere, pesci e fossili in Animal Crossing: Wild World. 
+                  L'anno anche la mia prima 'macchina fotografica': mi cimentavo in ritratti a personaggi che personalizzavo con disegni fatti a mano, sticker e cornici. 
+                  In quegli anni, giocare non era solo intrattenimento, ma anche condivisione, compagnia, rifugio. Era ridere con mio fratello mentre giocava con il suo Nintendo 3DS Aqua Blue, 
+                  confrontarsi su chi fosse più forte, scambiarsi consigli, cartucce e salvataggi. Oggi ho una Nintendo Switch e, anche se gioco meno di un tempo, ogni volta che la accendo è come tornare 
+                  un po' indietro. Questo sito è nato proprio da qui: dal desiderio di raccogliere quei momenti, quei giochi, quelle emozioni. Non è un elenco tecnico, né un blog, ma semplicemente 
+                  una piccola esperienza da vivere per chi ha giocato con Nintendo, per chi ci è cresciuto e per chi lo porta ancora nel cuore.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-il_sito">
+            <div>
+              <img src="Immagini\Icone\Personaggi Super Mario\33755_super mario_mario_super mario_computer game_mario_computer game.png" alt="icona_mario" class="mario-img">
+                <h2><b>Il sito</b></h2>
+                <p>Touch to Start è un sito esperienziale dedicato a tre console che hanno segnato un'epoca: Nintendo DS, Wii e Switch.
+                  Attraverso giochi, momenti e ricordi personali, il sito racconta cosa significa crescere con Nintendo e quanto siano forti i legami creati giocando da soli che in compagnia.
+                  Ogni sezione è un piccolo viaggio, costruito con passione, memoria e immagini reali delle console e dei salvataggi originali.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-contatti">
+        <div>
+            <div class="mushroom-icon">
+                <img src="Immagini\Icone\Personaggi Super Mario\33751_mushroom_mega_super mario_mushroom_mega_super mario.png" alt="icona_fungo" class="fungo-img">
+            </div>
+
+            <h2><b>Resta in contatto</b></h2>
+
+            <p class="subtitle">
+                Hai avuto anche tu un DS, una Wii o una Switch? Ti sei ritrovato in uno di questi ricordi?<br>
+                Oppure hai qualche domanda? Scrivimi compilando il form qui sotto!
+            </p>
+            
+            <div class="contact-content">
+                <img src="Immagini\Icone\Personaggi Super Mario\Mario e Luigi.png" alt="Mario e Luigi" class="contact-image left-img">
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="La tua email" required>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="messaggio">Il tuo messaggio:</label>
+                        <textarea id="messaggio" name="messaggio" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Invia</button>
+                </form>
+
+                <img src="Immagini/Icone/Personaggi Animal Crossing/Timmy & Tommy.png" alt="Timmy&Tommy" class="contact-image right-img">
+            </div>
+        </div>
+    </section>
+
+  <footer>
+    <div class="footer-left">
+      <span>Seguici su:</span>
+      <div class="social-links">
+        <a href="#" target="_blank"><img src="Immagini/Social/instagram.png" alt="Instagram">@touch_to_start</a>
+        <a href="#" target="_blank"><img src="Immagini/Social/tiktok.png" alt="TikTok">@touch_to_start</a>
+        <a href="#" target="_blank"><img src="Immagini/Social/facebook.png" alt="Facebook">@Touch to Start</a>
+      </div>
+    </div>
+
+    <div class="footer-center">
+      <img src="Immagini/Logo/Logo black.png" alt="Touch to Start" />
+    </div>
+
+    <div class="footer-right">
+      <span>Copyright © Touch to Start – Tutti i diritti riservati. Made with ❤️ by Tommaso Viani</span>
+    </div>
+</footer>
+
+    
+  </body>
+</html>
