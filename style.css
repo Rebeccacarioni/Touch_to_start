@@ -1,6 +1,7 @@
 *, *::before, *::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -13,6 +14,12 @@ body {
   align-items: center;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+.homepage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
@@ -41,8 +48,9 @@ header {
   z-index: 1000;
   padding: 10px 0;
   background: #FF8484;
-  /*width: 100%;*/
   height: 80px;
+  align-content: center;
+  width: 100%;
 }
 
 .header-container {
@@ -141,13 +149,33 @@ nav button:hover {
 .logo img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .nav {
   position: absolute;
   right: 20px;
 }
+
+/*SCOPRI DI PIU*/
+.scopri {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #FFB7B7;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.scopri:hover {
+  background: #FFA8A8;
+  transform: scale(1.1);
+}
+
 
 /*ABOUT*/
 #about {
@@ -231,6 +259,9 @@ nav button:hover {
 
 .slider-container {
   --slide-max-width: 768px;
+  align-content: center;
+  width: 100%;
+  flex-grow: 1;
 }
 
 @media (max-width: 768px) {
@@ -242,14 +273,17 @@ nav button:hover {
 .slider {
   display: flex;
   overflow-x: auto;
+  overflow-y: clip;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   padding-inline: calc(50vw - var(--slide-max-width) / 2);
   scrollbar-width: none;
-  align-items: center;
 }
 
 .slide {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   flex-shrink: 0;
   flex-basis: var(--slide-max-width);
   max-width: var(--slide-max-width);
@@ -336,6 +370,7 @@ nav button:hover {
 
 .overlay {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -349,7 +384,11 @@ nav button:hover {
   position: relative;
   z-index: 1;
   font-size: 430px;
-  margin: 0 0 10px 0;
+  margin: 0;
+}
+
+.overlay-inner {
+  position: relative;
 }
 
 .background-img {
@@ -1187,7 +1226,16 @@ textarea {
     /* MOBILE: Rimuovi il posizionamento assoluto per evitare overflow */
     
     .logo img {
-        height: 50px;
+        height: 35px;
+    }
+
+    #about {
+      font-size: 13px;
+      padding: 5px 10px;
+    }
+
+    .hamburger-menu {
+      width: 25px;
     }
 
     .section-contatti {
@@ -1240,6 +1288,8 @@ footer {
   padding: 0px 40px;
   flex-wrap: wrap;
   gap: 50px;
+  align-content: center;
+  width: 100%;
 }
 
 .footer-left {
