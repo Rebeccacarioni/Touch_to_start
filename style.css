@@ -88,11 +88,13 @@ header {
   position: absolute;
   left: 0px;
   border: none;
-  background: rgba(255, 255, 255, 0.1);;
   left: 0px;
   top: 0px;
   width: 400px;
   height: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px); /* per Safari */
 }
 
 .header-nav {
@@ -866,10 +868,6 @@ h1 {
   border-radius: 15px;
 }
 
-.game-dx-img {
-  border: none;
-}
-
 /* --- MEDIA QUERY: RESPONSIVE PER TABLET --- */
 @media (max-width: 1100px) {
   .game-sx-img, .game-dx-img {
@@ -1035,6 +1033,42 @@ h1 {
   
   .griglia-giochi img {
     width: 250px;
+  }
+}
+
+.more-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5.208vw;
+  margin-bottom: 50px;
+}
+
+.screen-golf, .screen-bike {
+  width: 500px;
+  height: auto;
+  border-radius: 15px;
+}
+
+@media (max-width: 650px) {
+  #more-images {
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  
+  .screen-golf, .screen-bike {
+    width: 300px;
+  }
+
+  .screen-golf { order: 1; }
+  .screen-bike { order: 2; }
+}
+
+/* --- MEDIA QUERY: RESPONSIVE PER TABLET --- */
+@media (max-width: 1100px) {
+  .screen-golf, .screen-bike {
+    width: 300px;
   }
 }
 
@@ -1564,6 +1598,12 @@ textarea {
 @media (max-width: 1150px) {
     
     /* MOBILE: Rimuovi il posizionamento assoluto per evitare overflow */
+    .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
     
     .logo img {
         height: 35px;
