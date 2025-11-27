@@ -60,6 +60,15 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: "smooth",
       inline: "center",
     });
+
+    var dots = document.querySelectorAll(".dot");
+    var dot = dots[index];
+    var oldDot=document.querySelector(".active");
+    if (oldDot!==null) {
+      oldDot.classList.remove("active");
+    }
+
+    dot.classList.add("active");
   }
 
   /**
@@ -124,6 +133,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Aggiungiamo la classe CSS '.dot' al pulsante appena creato per dargli uno stile.
     dot.classList.add("dot");
+    if (index === 0) {
+      dot.classList.add("active");
+    }
 
     // Inseriamo il pallino appena creato all'interno del suo contenitore.
     dotsContainer.appendChild(dot);
@@ -133,11 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
     dot.addEventListener("click", function () {
       // ...chiamiamo la funzione 'activateSlide' passando l'indice
       // della slide a cui questo pallino corrisponde.
-      var oldDot=document.querySelector(".active");
-      if (oldDot!==null) {
-        oldDot.classList.remove("active");
-      }
-      dot.classList.add("active");
       activateSlide(index);
     });
   });

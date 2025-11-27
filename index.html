@@ -12,14 +12,13 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-<body>
+<body class="homepage">
   <header>
-    <!--test-->
     <button class="header-button" popovertarget="site-navigation" popovertargetaction="show"><img class="hamburger-menu" src="Immagini/Icone/Immagini varie/burger-bar.png"></button>
     <nav id="site-navigation" class="header-nav" popover>
       <ul>
         <li>
-          <a href="slider.html">Home</a>
+          <a href="index.html">Home</a>
         </li>
         <li>
           <a href="#">Nintendo DS</a>
@@ -37,7 +36,7 @@
       <button popovertarget="site-navigation" popovertargetaction="hide">Chiudi menu</button>
     </nav>
     <div class="logo"> 
-      <a href="slider.html">
+      <a href="index.html">
         <img src="Immagini/Logo/Logo red.png" alt="Logo">
       </a>
     </div>
@@ -52,27 +51,39 @@
     <div class="slider">
       <figure id="slide-1" class="slide">
         <div class="overlay">
-          <img src="Immagini/Immagini/Wii.png" alt="Wii" class="background-img">
-          <h1>Wii</h1>
+          <div class="overlay-inner">
+            <img src="Immagini/Immagini/Wii.png" alt="Wii" class="background-img">
+            <h1>Wii</h1>
+          </div>
         </div>
+        <a href="wii.html" class="scopri">Scopri di più</a>
       </figure>
       <figure id="slide-2" class="slide">
         <div class="overlay">
-          <img src="Immagini/Immagini/Nintendo DSi XL opened.png" alt="Nintendo DS" class="background-img">
-          <h1>DS</h1>
+          <div class="overlay-inner">
+            <img src="Immagini/Immagini/Nintendo DSi XL opened.png" alt="Nintendo DS" class="background-img">
+            <h1>DS</h1>
+          </div>
+        </div>
+        <a href="#" class="scopri">Scopri di più</a>
       </figure>
       <figure id="slide-3" class="slide">
         <div class="overlay">
-          <img src="Immagini/Immagini/Switch.png" alt="Nintendo Switch" class="background-img">
-          <h1>Switch</h1>
+          <div class="overlay-inner">
+            <img src="Immagini/Immagini/Switch.png" alt="Nintendo Switch" class="background-img">
+            <h1>Switch</h1>
+          </div>
+        </div>
+        <a href="#" class="scopri">Scopri di più</a>
       </figure>
     </div>
-    <div class="slider-nav">
-      <button class="prev-slide">&lt;</button>
-      <button class="next-slide">&gt;</button>
-    </div>
-    <div class="slider-pagination">
-      <div class="slider-dots">
+    <div class="slider-main-container">
+      <div class="slider-nav">
+        <button class="prev-slide">&lt;</button>
+        <div class="slider-pagination">
+          <div class="slider-dots"></div>
+        </div>
+        <button class="next-slide">&gt;</button>
       </div>
     </div>
   </section>

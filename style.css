@@ -1,6 +1,7 @@
 *, *::before, *::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -13,6 +14,12 @@ body {
   align-items: center;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+.homepage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
@@ -41,8 +48,9 @@ header {
   z-index: 1000;
   padding: 10px 0;
   background: #FF8484;
-  /*width: 100%;*/
   height: 80px;
+  align-content: center;
+  width: 100%;
 }
 
 .header-container {
@@ -141,13 +149,33 @@ nav button:hover {
 .logo img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .nav {
   position: absolute;
   right: 20px;
 }
+
+/*SCOPRI DI PIU*/
+.scopri {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #FFB7B7;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.scopri:hover {
+  background: #FFA8A8;
+  transform: scale(1.1);
+}
+
 
 /*ABOUT*/
 #about {
@@ -231,6 +259,9 @@ nav button:hover {
 
 .slider-container {
   --slide-max-width: 768px;
+  align-content: center;
+  width: 100%;
+  flex-grow: 1;
 }
 
 @media (max-width: 768px) {
@@ -242,18 +273,22 @@ nav button:hover {
 .slider {
   display: flex;
   overflow-x: auto;
+  overflow-y: clip;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   padding-inline: calc(50vw - var(--slide-max-width) / 2);
   scrollbar-width: none;
-  align-items: center;
 }
 
 .slide {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   flex-shrink: 0;
   flex-basis: var(--slide-max-width);
   max-width: var(--slide-max-width);
   scroll-snap-align: center;
+  padding-bottom: 10px;
 }
 
 .slide img {
@@ -270,8 +305,56 @@ nav button:hover {
   font-size: 200px;
 }
 
+.slider-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .slider-nav button {
   cursor: pointer;
+}
+
+.prev-slide {
+  width: 40px;
+  height: 40px;
+  padding: 7px;
+  border-radius: 50px;
+  border: none;
+  background-color: #FFB7B7;
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.prev-slide:hover {
+  background-color: #FFA8A8;
+  transform: scale(1.1);
+}
+
+.next-slide {
+  width: 40px;
+  height: 40px;
+  padding: 7px;
+  border-radius: 50px;
+  border: none;
+  background-color: #FFB7B7;
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.next-slide:hover {
+  background-color: #FFA8A8;
+  transform: scale(1.1);
 }
 
 .slider-pagination {
@@ -336,6 +419,7 @@ nav button:hover {
 
 .overlay {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -349,7 +433,11 @@ nav button:hover {
   position: relative;
   z-index: 1;
   font-size: 430px;
-  margin: 0 0 10px 0;
+  margin: 0;
+}
+
+.overlay-inner {
+  position: relative;
 }
 
 .background-img {
@@ -611,7 +699,13 @@ nav button:hover {
 }
 
 .wii-icon img {
-  width: 6.094vw;
+  width: 100px;
+}
+
+@media (max-width: 650px) {
+  .wii-icon img {
+    width: 70px;
+  }
 }
 
 .text {
@@ -659,7 +753,7 @@ nav button:hover {
   width: 100px;
 }
 h1 {
-  font-size: 1.667vw;
+  font-size: 32px;
 }
 .p1 {
   font-size: 1.667vw;
@@ -674,13 +768,19 @@ h1 {
   padding-inline: 10.417vw;
 }
 
+@media (max-width: 650px) {
+  h1 {
+    font-size: 22px;
+  }
+}
+
 /* Mii player */
 #mii-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 170px;
+  gap: 350px;
 }
 
 .mii-left, .mii-right {
@@ -688,7 +788,7 @@ h1 {
 }
 
 .mii-logo {
-  width: 5.208vw;
+  width: 100px;
 }
 
 /* Immagini dei giochi */
@@ -701,10 +801,32 @@ h1 {
 }
 
 .game-sx-img, .game-dx-img {
-  width: 18.229vw;
+  width: 500px;
   border-radius: 15px;
 }
 
+/* --- MEDIA QUERY: RESPONSIVE PER TABLET --- */
+@media (max-width: 1100px) {
+  .game-sx-img, .game-dx-img {
+    width: 300px;
+  }
+}
+
+/* --- MEDIA QUERY: RESPONSIVE PER MOBILE --- */
+@media (max-width: 650px) {
+  #games {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px
+  }
+  
+  .game-sx-img, .game-dx-img {
+    width: 300px;
+  }
+  .game-sx-img { order: 1; }
+  .game-dx-img { order: 2; }
+}
 
 .giochi {
   display: flex;
@@ -715,13 +837,14 @@ h1 {
 }
 
 /* Colonna sinistra */
-.personaggi-sx img {
-  width: 13.021vw;
+.mario-peach-sx img {
+  width: 200px;
   display: flex;
   align-items: flex-end;
 }
+
 .titolo-centro {
-  display:flex;
+  display: flex;
   align-items: center;
   text-align: center;
   flex-direction: column;
@@ -730,12 +853,30 @@ h1 {
 .stella {
   width: 100px;
   margin-bottom: 10px;
-
 }
 
 /* Colonna destra */
-.personaggio-dx img {
-  height: 13.021vw;
+.bowser img {
+  height: 200px;
+}
+
+/* MEDIA QUERY PER TABLET E MOBILE */
+@media (max-width: 1100px) {
+  .bowser img {
+    height: 150px;
+  }
+  .mario-peach-sx img {
+    width: 150px;
+  }
+}
+
+@media (max-width: 650px) {
+  .bowser img {
+    height: 100px;
+  }
+  .mario-peach-sx img {
+    width: 100px;
+  }
 }
 
 
@@ -955,7 +1096,7 @@ h1 {
   right: -60px;
 }
 
-/* --- MEDIA QUERY: RESPONSIVE PER MOBILE --- */
+/* --- MEDIA QUERY: RESPONSIVE PER TABLET --- */
 @media (max-width: 1100px) {
   .console-card {
     width: 200px;
@@ -992,13 +1133,13 @@ h1 {
 }
 
 /* --- MEDIA QUERY: RESPONSIVE PER TABLET --- */
-@media (max-width: 950px) {
+@media (max-width: 1100px) {
   #mii-container {
-    gap: 5.208vw;
+    gap: 150px;
   }
   
   .mii-left, .mii-right {
-    width: 150px;
+    width: 100px;
   }
   
   .mii-logo {
@@ -1009,7 +1150,7 @@ h1 {
 /* --- MEDIA QUERY: RESPONSIVE PER MOBILE --- */
 @media (max-width: 650px) {
   #mii-container {
-    gap: 100px;
+    gap: 50px;
   }
 
   .mii-left, .mii-right {
@@ -1024,7 +1165,7 @@ h1 {
 /*ABOUT*/
 .section-chi_sono div {
   background: linear-gradient(to bottom, #FF8484, #CEFEFF 90%);
-  padding: 60px 200px;
+  padding: 60px 10.417vw;
   text-align: center;
 }
 
@@ -1041,7 +1182,7 @@ h1 {
 
 .section-il_sito {
     background: linear-gradient(to bottom, #CEFEFF, #FFF6B4 80%);
-    padding: 60px 200px;
+    padding: 60px 10.417vw;
     text-align: center;
 }
 
@@ -1053,7 +1194,7 @@ h1 {
 /*CONTATTI*/
 .section-contatti {
     background-color:#FFF6B4;
-    padding: 60px 0;
+    padding: 60px 10.417vw;
 }
 
 .subtitle {
@@ -1187,7 +1328,16 @@ textarea {
     /* MOBILE: Rimuovi il posizionamento assoluto per evitare overflow */
     
     .logo img {
-        height: 50px;
+        height: 35px;
+    }
+
+    #about {
+      font-size: 13px;
+      padding: 5px 10px;
+    }
+
+    .hamburger-menu {
+      width: 25px;
     }
 
     .section-contatti {
@@ -1240,6 +1390,8 @@ footer {
   padding: 0px 40px;
   flex-wrap: wrap;
   gap: 50px;
+  align-content: center;
+  width: 100%;
 }
 
 .footer-left {
