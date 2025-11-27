@@ -1384,9 +1384,22 @@ h1 {
   text-align: center;
 }
 
-.Tommaso-img {
+.tommaso-img {
     display: inline-block;
     max-width: 120px;
+}
+
+@media (max-width: 650px) {
+  .tommaso-img {
+    width: 60px;
+  }
+  .mario-img {
+    width: 60px;
+  }
+  .mushroom-icon .fungo-img {
+    width: 60px;
+}
+
 }
 
 .container {
@@ -1537,6 +1550,14 @@ textarea {
 
     .right-img {
         right: -10vw;
+    }
+
+    .contact-content .left-img {
+      width: 100px;
+    }
+
+    .contact-content .right-img {
+      width: 120px;
     }
 }
 
