@@ -198,18 +198,25 @@ nav button:hover {
 
 /* MOBILE */
 @media (max-width: 768px) {
-    
-  .overlay h1 {
-    font-size: 50px; /* Riduci per mobile */
+
+  .overlay #switch-text  {
+    font-size: 100px;
   }
 
   .background-img {
     width: 90%;
     height: auto;
   }
+
+  #slide-2 .background-img {
+    width: 100%;
+    height: auto;
+  }
+
   .container {
     padding: 15px; /* Spazi più piccoli */
   }
+
   #hero button {
     padding: 10px 20px;
     font-size: 16px;
@@ -509,11 +516,15 @@ nav button:hover {
     
     .overlay h1 {
       z-index: 0;
-      font-size: 250px;
-      margin: 0 0 30px 0;
+      font-size: 220px;
+      margin: 0 0 100px 0;
       position: relative;
     }
 
+    .overlay-inner img {
+      top: 40%;
+    }
+  
     #hero button {
       padding: 7.5px 15px;
       font-size: 16px;
@@ -622,6 +633,11 @@ nav button:hover {
     max-width: 400px;
     width: 100%;
     height: 450px;
+  }
+
+  .serie-section {
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 
   .serie-section figure {
@@ -740,7 +756,7 @@ nav button:hover {
   align-items: center;
 }
 
-.fungo-img {
+.fungorosso-img {
   margin-top: 20px;
   width: 100px;
 }
@@ -750,6 +766,39 @@ nav button:hover {
     padding: 0;
     margin: 0;  
     width: 100%;
+}
+
+@media (max-width: 768px) {
+  .release-list { 
+    width: 70%;
+  }
+}
+
+/* MEDIA QUERY CON LE IMMAGINI DEI TITOLI */
+@media (max-width: 768px) {
+  .fungorosso-img {
+    width: 60px;
+  }
+  
+  .la-mia-console .pianta-img {
+    width: 60px;
+  }
+
+  .titolo-centro .stella-img {
+    width: 60px;
+  }
+
+  .compagnia .guscio-verde-img {
+    width: 60px;
+  }
+
+  .lakitu {
+  width: 60px;
+  }
+
+  .fungo-img {
+    width: 60px;
+  }
 }
 
 /* LA MIA CONSOLE */
@@ -813,7 +862,12 @@ h1 {
 
 .game-sx-img, .game-dx-img {
   width: 500px;
+  height: auto;
   border-radius: 15px;
+}
+
+.game-dx-img {
+  border: none;
 }
 
 /* --- MEDIA QUERY: RESPONSIVE PER TABLET --- */
@@ -841,15 +895,24 @@ h1 {
 
 .giochi {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(to bottom, #FFE0E0, #CEFEFF);
   padding: 40px 80px;
 }
 
+.titolo-giochi {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 220px;
+}
+
 /* Colonna sinistra */
 .mario-peach-sx img {
-  width: 200px;
+  width: 170px;
+  left: 0;
   display: flex;
   align-items: flex-end;
 }
@@ -861,7 +924,7 @@ h1 {
   flex-direction: column;
 }
 
-.stella {
+.stella-img {
   width: 100px;
   margin-bottom: 10px;
 }
@@ -869,27 +932,111 @@ h1 {
 /* Colonna destra */
 .bowser img {
   height: 200px;
+  right: 0;
 }
 
 /* MEDIA QUERY PER TABLET E MOBILE */
 @media (max-width: 1100px) {
   .bowser img {
-    height: 150px;
+    height: 130px;
   }
   .mario-peach-sx img {
-    width: 150px;
+    width: 130px;
+  }
+  .titolo-giochi {
+    gap: 150px;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
   .bowser img {
-    height: 100px;
+    height: 80px;
   }
   .mario-peach-sx img {
-    width: 100px;
+    width: 80px;
+  }
+  .titolo-giochi {
+    gap: 50px;
   }
 }
 
+.griglia-giochi {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 400px;
+  gap: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.griglia-giochi img {
+  width: 350px;
+  object-fit: contain;
+}
+
+.griglia-giochi img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.griglia-giochi img:nth-child(1),
+.griglia-giochi img:nth-child(3) {
+  align-self: start;
+}
+
+.griglia-giochi img:nth-child(2),
+.griglia-giochi img:nth-child(4) {
+  align-self: end;
+}
+
+@media (max-width: 1550px) {
+  .griglia-giochi {
+    grid-auto-rows: 300px;
+    gap: 50px;
+}
+  
+  .griglia-giochi img {
+    width: 250px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .griglia-giochi {
+    grid-auto-rows: 250px;
+    gap: 50px;
+}
+  
+  .griglia-giochi img {
+    width: 200px;
+  }
+}
+
+@media (max-width: 950px) {
+  .griglia-giochi {
+    grid-auto-rows: 200px;
+    gap: 30px;
+}
+  
+  .griglia-giochi img {
+    width: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .griglia-giochi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .griglia-giochi img {
+    width: 250px;
+  }
+}
 
 /* COMPAGNIA */
 .compagnia {
@@ -920,7 +1067,7 @@ h1 {
   position: absolute;
   top: 0;
   left: 2.604vw;
-  width: 5.813vw;
+  width: 110px;
   z-index: 2;
 }
 
@@ -928,7 +1075,7 @@ h1 {
   position: absolute;
   top: 2.604vw;
   right: 2.604vw;
-  width: 9.979vw;
+  width: 170px;
   z-index: 2;
 }
 
@@ -936,7 +1083,7 @@ h1 {
   position: absolute;
   bottom: 0;
   left: 2.604vw;
-  width: 12.583vw;
+  width: 200px;
   z-index: 2;
 }
 
@@ -944,8 +1091,46 @@ h1 {
   position: absolute;
   bottom: 0;
   right: 2.604vw;
-  width: 5.813vw;
+  width: 110px;
   z-index: 2;
+}
+
+/* --- MEDIA QUERY: RESPONSIVE PER TABLET --- */
+@media (max-width: 1100px) {
+  .tom-nook-img {
+    width: 80px;
+  }
+
+  .timmy-tommy-img {
+    width: 120px;
+  }
+
+  .reese-cyrus-img {
+    width: 150px;
+  }
+
+  .isabelle-img {
+    width: 80px;
+  }
+}
+
+/* --- MEDIA QUERY: RESPONSIVE PER MOBILE --- */
+@media (max-width: 768px) {
+  .tom-nook-img {
+    width: 50px;
+  }
+
+  .timmy-tommy-img {
+    width: 80px;
+  }
+
+  .reese-cyrus-img {
+    width: 100px;
+  }
+
+  .isabelle-img {
+    width: 50px;
+  }
 }
 
 /*card Tommaso-Giacomo*/
@@ -958,6 +1143,20 @@ h1 {
   background-color:#CEFEFF;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+/* --- MEDIA QUERY: RESPONSIVE PER MOBILE --- */
+@media (max-width: 768px) {
+  .card .boo {
+    width: 60px;
+  }
+  .card .boo-sx {
+    left: -10px;
+  }
+  .card .boo-dx {
+    right: -10px;
+    transform: scaleX(-1);
+  }
 }
 
 .card {
@@ -997,11 +1196,10 @@ h1 {
   color: #333;
 }
 
-
 .boo {
   position: absolute;
   top: -35px;
-  width: 4.200vw;
+  width: 80px;
 }
 
 .boo-sx {
@@ -1052,13 +1250,15 @@ h1 {
 /* Card singola */
 .console-card {
   position: relative;
+  flex-wrap: wrap;
   background-color: rgba(255, 255, 255, 0.442);
   border-radius: 25px;
   padding: 40px 30px;
-  width: 17.708vw;
-  height: 17.708vw;
+  width: 350px;
+  height: 350px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .console-card:hover {
@@ -1071,12 +1271,20 @@ h1 {
 }
 
 /* Immagine console */
-.console-img {
+.console-img-1 {
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.console-img-2 {
   width: 100%;
   max-width: 300px;
   height: auto;
   margin-bottom: 20px;
 }
+
 
 /* Testo card */
 .console-card h2 {
@@ -1095,28 +1303,20 @@ h1 {
 /* Personaggi card */
 .personaggio {
   position: absolute;
-  width: 5.208vw;
+  width: 70px;
   bottom: -40px;
 }
 
 .goomba-sx {
-  left: -60px;
+  left: -30px;
 }
 
 .koopa-dx {
-  right: -60px;
+  right: -30px;
 }
 
 /* --- MEDIA QUERY: RESPONSIVE PER TABLET --- */
 @media (max-width: 1100px) {
-  .console-card {
-    width: 200px;
-    height: 200px;
-  }
-  .console-card img {
-    height: 80px;
-    width: auto;
-  }
   .console-card .personaggio-sx {
     left: 0px;
   }
@@ -1128,11 +1328,15 @@ h1 {
 /* --- MEDIA QUERY: RESPONSIVE PER MOBILE --- */
 @media (max-width: 650px) {
   .console-card {
-    width: 200px;
-    height: 200px;
+    width: 280px;
+    height: 280px;
   }
-  .console-card img {
-    height: 80px;
+  .console-card .goomba-sx {
+    height: 60px;
+    width: auto;
+  }
+  .console-card .koopa-dx {
+    height: 70px;
     width: auto;
   }
   .console-card .personaggio-sx {
@@ -1221,7 +1425,10 @@ h1 {
     position: relative; /* Base per il posizionamento del fungo */
 }
 
-
+.fungo-img {
+  margin-top: 20px;
+  width: 100px;
+}
 
 /* CONTENUTO PRINCIPALE (Form e Immagini) */
 .contact-content {
@@ -1311,6 +1518,7 @@ textarea {
     bottom: 0px; /* Posizionale più in basso */
 }
 
+
 .left-img {
     left: -200px; /* Posizione fissa a sinistra del form (regola a piacere) */
 }
@@ -1321,8 +1529,7 @@ textarea {
 
 
 /* --- MEDIA QUERY: RESPONSIVE PER MOBILE/TABLET --- */
-@media (max-width: 950px) {
-    
+@media (max-width: 950px) { 
     /* Adatta il posizionamento delle immagini laterali quando lo schermo si restringe */
     .left-img {
         left: -10vw; /* Usa % della viewport per avvicinarle */
@@ -1331,10 +1538,9 @@ textarea {
     .right-img {
         right: -10vw;
     }
-    
 }
 
-@media (max-width: 650px) {
+@media (max-width: 1150px) {
     
     /* MOBILE: Rimuovi il posizionamento assoluto per evitare overflow */
     
@@ -1368,7 +1574,7 @@ textarea {
 
     .contact-image {
         position: static; /* ESSENZIALE: Le immagini tornano nel flusso normale */
-        width: 50%; 
+        width: 40%; 
         max-width: 180px; 
         margin: 20px 0; /* Spazio sopra e sotto */
         /* Rimuovi posizionamento assoluto */
@@ -1387,7 +1593,6 @@ textarea {
         padding: 20px;
         width: 100%;
     }
-    
 }
 
 /* FOOTER */
@@ -1440,6 +1645,18 @@ footer {
 }
 
 @media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-center { order: 1 }
+  .footer-left { order: 2 }
+  .footer-right { order: 3 }
+}
+
+@media (max-width: 1300px) {
   footer {
     flex-direction: column;
     text-align: center;
